@@ -51,12 +51,13 @@ int main()
             //if value of alpha is greater than 360 or less than 0
             if(alpha<0)
             {
-                alpha = 360-alpha;
+                alpha = 360 + alpha;
             }
             else if(alpha>360)
             {
-                alpha = alpha/10;
+                alpha = alpha-360;
             }
+
             //error message of xmin xmax if xmax is smaller or equal to xmin
             if(xmax<=xmin)
             {
@@ -68,42 +69,36 @@ int main()
                 //display the table of x and f(x)
                 printf("x\t\t f(x)");
                 //declare variables
-                float i,x,count,dx,fx;
-                i=x=count=dx=fx=0;
+                float x,dx,fx;
+                x=dx=fx=0;
                 printf("\n-----------|-------------------");
 
-                //start for loop
-                for(i=xmin;i<=xmax;i++)
+                //start for loop, sets x=xmin increases by x+dx until xmin=xmax
+                for(x=xmin;x<=xmax;x+=dx)
                 {
+
                     //check if it is first iteration
-                    if(i==xmin)
+                    if(x==xmin)
                     {
                         //assign the value of xmin to the variable x
                         x = xmin;
                     }
                     //check if it is the last iteration
-                    else if(i==xmax)
+                    else if(x==xmax)
                     {
                         //assign the value of xmax to the variable x
                         x = xmax;
                     }
-                    else
-                    {
-                        //increment the value of x by count*dx
-                        x = x + count*dx;
-                    }
+
                     //calculate the value of f(x) at the value of x
-                    fx=(e*x)*sin(alpha)+f;
+                    fx=(e*x)*sin(alpha*(3.14/180))+f;
 
                     //display the value of x and f(x) in the next row
-                    printf("\n%.2f       |    %.2f",x,fx);
-
-                    //increment the count
-                    count = count + 1;
+                    printf("\n%.3f      |    %.2f",x,fx);
 
                     //calculate the value of dx
                     dx = (xmax-xmin)/10;
-                }
+                }//end loop
                 printf("\n-----------|------------------\n");
             }
             break;
@@ -130,11 +125,11 @@ int main()
             //if value of alpha is greater than 360 or less than 0
             if(alpha<0)
             {
-                alpha = 360-alpha;
+                alpha = 360 + alpha;
             }
             else if(alpha>360)
             {
-                alpha = alpha/10;
+                alpha = alpha-360;
             }
 
             //error message of xmin xmax if xmax is smaller or equal to xmin
@@ -149,42 +144,35 @@ int main()
                 //display the table of x and f(x)
                 printf("x\t\t f(x)");
                 //declare variables
-                float i,x,count,dx,fx;
-                i=x=count=dx=fx=0;
+                float x,dx,fx;
+                x=dx=fx=0;
                 printf("\n-----------|-------------------");
 
-                //start for loop
-                for(i=xmin;i<=xmax;i++)
+                //start for loop, sets x=xmin increases by x+dx until xmin=xmax
+                for(x=xmin;x<=xmax;x+=dx)
                 {
+
                     //check if it is first iteration
-                    if(i==xmin)
+                    if(x==xmin)
                     {
                         //assign the value of xmin to the variable x
                         x = xmin;
                     }
                     //check if it is the last iteration
-                    else if(i==xmax)
+                    else if(x==xmax)
                     {
                         //assign the value of xmax to the variable x
                         x = xmax;
                     }
-                    else
-                    {
-                        //increment the value of x by count*dx
-                        x = x + count*dx;
-                    }
                     //calculate the value of f(x) at the value of x
-                    fx=(d*pow(x,2))*cos(alpha) + (e*x)*sin(alpha) + f;
+                    fx=(d*pow(x,2))*cos(alpha*(3.14/180)) + (e*x)*sin(alpha*(3.14/180)) + f;
 
                     //display the value of x and f(x) in the next row
-                    printf("\n%.2f       |    %.2f",x,fx);
-
-                    //increment the count
-                    count = count + 1;
+                    printf("\n%.3f      |    %.2f",x,fx);
 
                     //calculate the value of dx
                     dx = (xmax-xmin)/10;
-                }
+                }//end loop
                 printf("\n-----------|------------------\n");
             }
             break;
@@ -212,11 +200,11 @@ int main()
             //if value of alpha is greater than 360 or less than 0
             if(alpha<0)
             {
-                alpha = 360-alpha;
+                alpha = 360 + alpha;
             }
             else if(alpha>360)
             {
-                alpha = alpha/10;
+                alpha = alpha-360;
             }
 
             //error message of xmin xmax if xmax is smaller or equal to xmin
@@ -231,42 +219,35 @@ int main()
                 //display the table of x and f(x)
                 printf("x\t\t f(x)");
                 //declare variables
-                float i,x,count,dx,fx;
-                i=x=count=dx=fx=0;
+                float x,dx,fx;
+                x=dx=fx=0;
                 printf("\n-----------|-------------------");
 
-                //start for loop
-                for(i=xmin;i<=xmax;i++)
+                //start for loop, sets x=xmin increases by x+dx until xmin=xmax
+                for(x=xmin;x<=xmax;x+=dx)
                 {
+
                     //check if it is first iteration
-                    if(i==xmin)
+                    if(x==xmin)
                     {
                         //assign the value of xmin to the variable x
                         x = xmin;
                     }
                     //check if it is the last iteration
-                    else if(i==xmax)
+                    else if(x==xmax)
                     {
                         //assign the value of xmax to the variable x
                         x = xmax;
                     }
-                    else
-                    {
-                        //increment the value of x by count*dx
-                        x = x + count*dx;
-                    }
                     //calculate the value of f(x) at the value of x
-                    fx=(c*pow(x,3))*sin(alpha) + (d*pow(x,2))*cos(alpha) + (e*x)*sin(alpha) + f;
+                    fx=(c*pow(x,3))*sin(alpha*(3.14/180)) + (d*pow(x,2))*cos(alpha*(3.14/180)) + (e*x)*sin(alpha*(3.14/180)) + f;
 
                     //display the value of x and f(x) in the next row
-                    printf("\n%.2f       |    %.2f",x,fx);
-
-                    //increment the count
-                    count = count + 1;
+                    printf("\n%.3f      |    %.2f",x,fx);
 
                     //calculate the value of dx
                     dx = (xmax-xmin)/10;
-                }
+                }//end loop
                 printf("\n-----------|------------------\n");
             }
             break;
@@ -296,11 +277,11 @@ int main()
             //if value of alpha is greater than 360 or less than 0
             if(alpha<0)
             {
-                alpha = 360-alpha;
+                alpha = 360 + alpha;
             }
             else if(alpha>360)
             {
-                alpha = alpha/10;
+                alpha = alpha-360;
             }
 
             //error message of xmin xmax if xmax is smaller or equal to xmin
@@ -315,42 +296,35 @@ int main()
                 //display the table of x and f(x)
                 printf("x\t\t f(x)");
                 //declare variables
-                float i,x,count,dx,fx;
-                i=x=count=dx=fx=0;
+                float x,dx,fx;
+                x=dx=fx=0;
                 printf("\n-----------|-------------------");
 
-                //start for loop
-                for(i=xmin;i<=xmax;i++)
+                //start for loop, sets x=xmin increases by x+dx until xmin=xmax
+                for(x=xmin;x<=xmax;x+=dx)
                 {
+
                     //check if it is first iteration
-                    if(i==xmin)
+                    if(x==xmin)
                     {
                         //assign the value of xmin to the variable x
                         x = xmin;
                     }
                     //check if it is the last iteration
-                    else if(i==xmax)
+                    else if(x==xmax)
                     {
                         //assign the value of xmax to the variable x
                         x = xmax;
                     }
-                    else
-                    {
-                        //increment the value of x by count*dx
-                        x = x + count*dx;
-                    }
                     //calculate the value of f(x) at the value of x
-                    fx=(b*pow(x,4))*cos(alpha)+(c*pow(x,3))*sin(alpha)+(d*pow(x,2))*cos(alpha) + (e*x)*sin(alpha) + f;
+                    fx=(b*pow(x,4))*cos(alpha*(3.14/180))+(c*pow(x,3))*sin(alpha*(3.14/180))+(d*pow(x,2))*cos(alpha*(3.14/180)) + (e*x)*sin(alpha*(3.14/180)) + f;
 
                     //display the value of x and f(x) in the next row
-                    printf("\n%.2f       |    %.2f",x,fx);
-
-                    //increment the count
-                    count = count + 1;
+                    printf("\n%.3f      |    %.2f",x,fx);
 
                     //calculate the value of dx
                     dx = (xmax-xmin)/10;
-                }
+                }//end loop
                 printf("\n-----------|------------------\n");
             }
             break;
@@ -382,11 +356,11 @@ int main()
             //if value of alpha is greater than 360 or less than 0
             if(alpha<0)
             {
-                alpha = 360-alpha;
+                alpha = 360 + alpha;
             }
             else if(alpha>360)
             {
-                alpha = alpha/10;
+                alpha = alpha-360;
             }
 
             //error message of xmin xmax if xmax is smaller or equal to xmin
@@ -401,42 +375,36 @@ int main()
                 //display the table of x and f(x)
                 printf("x\t\t f(x)");
                 //declare variables
-                float i,x,count,dx,fx;
-                i=x=count=dx=fx=0;
+                float x,count,dx,fx;
+                x=dx=fx=0;
                 printf("\n-----------|-------------------");
 
-                //start for loop
-                for(i=xmin;i<=xmax;i++)
+                //start for loop, sets x=xmin increases by x+dx until xmin=xmax
+                for(x=xmin;x<=xmax;x+=dx)
                 {
+
                     //check if it is first iteration
-                    if(i==xmin)
+                    if(x==xmin)
                     {
                         //assign the value of xmin to the variable x
                         x = xmin;
                     }
                     //check if it is the last iteration
-                    else if(i==xmax)
+                    else if(x==xmax)
                     {
                         //assign the value of xmax to the variable x
                         x = xmax;
                     }
-                    else
-                    {
-                        //increment the value of x by count*dx
-                        x = x + count*dx;
-                    }
                     //calculate the value of f(x) at the value of x
-                    fx=(a*pow(x,5))*sin(alpha) + (b*pow(x,4))*cos(alpha) + (c*pow(x,3))*sin(alpha) + (d*pow(x,2))*cos(alpha) + (e*x)*sin(alpha) + f;
+                    fx=(a*pow(x,5))*sin(alpha*(3.14/180)) + (b*pow(x,4))*cos(alpha*(3.14/180)) + (c*pow(x,3))*sin(alpha*(3.14/180)) + (d*pow(x,2))*cos(alpha*(3.14/180)) + (e*x)*sin(alpha*(3.14/180)) + f;
 
                     //display the value of x and f(x) in the next row
-                    printf("\n%.2f       |    %.2f",x,fx);
+                    printf("\n%.3f      |    %.2f",x,fx);
 
-                    //increment the count
-                    count = count + 1;
 
                     //calculate the value of dx
                     dx = (xmax-xmin)/10;
-                }
+                }//end loop
                 printf("\n-----------|------------------\n");
             }
             break;
